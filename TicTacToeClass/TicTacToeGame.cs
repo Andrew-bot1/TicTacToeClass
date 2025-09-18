@@ -9,18 +9,18 @@ namespace TicTacToeClass
 {
     internal class TicTacToeGame
     {
-        public TicTacToeGame playerOne = new TicTacToeGame(1, "X");
-        TicTacToeGame playerTwo = new TicTacToeGame(2, "o");
-        public int curPlayer = 1;
-        int[,] board = { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+        private string[,] board =  { { "", "", ""}, { "", "", ""}, { "", "", "" } };
+
 
         private int player;
         private string sym;
+        private string type;
 
-        public TicTacToeGame(int player,string sym)
+        public TicTacToeGame(int myPlayer,string mySym, string myType)
         {
-            player = player;
-            sym = sym;
+            player = myPlayer;
+            sym = mySym;
+            type = myType;
         }
 
         public int Player
@@ -35,25 +35,53 @@ namespace TicTacToeClass
             set { sym = value; }
         }
 
-        //string curPlayer=
-
-        public string switchCur()
+        public void placePiece(Button Square, TicTacToeGame curPlayer, int num1, int num2)
         {
-            return curPlayer;
+            if (Square.Text == "")
+            {
+                if (curPlayer.type == "real")
+                {
+                    if (curPlayer.Player == 1)
+                    {
+                        board[num1, num2] = "x";
+                        Square.Text = "X";
+                        curPlayer.Player = 2;
+                    }
+                    else
+                    {
+                        board[num1, num2] = "o";
+                        Square.Text = "O";
+                        curPlayer.Player = 1;
+                    }
+                }
+                else
+                {
+
+                }
+                
+            }
         }
 
-        public int switchPlayer(int curPlayer)
+        public static int comMove()
         {
-            if (curPlayer == 1)
-            {
-                curPlayer = 2;
-                return 1;
-            }
-            else
-            {
-                curPlayer = 1;
-                return 2;
-            }
+            Random rand = new Random();
+            int num = rand.Next(1, 9);
+
+            return num;
+
+            //switch (num)
+            //{
+            //    case 1:
+
+            //        placePiece(btnUpLeft);
+            //        break;
+            //}
+        }
+
+        public static void checkWinner()
+        {
+            //check horizontal row
+
         }
     }
 }

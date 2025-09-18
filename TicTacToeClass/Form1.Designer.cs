@@ -30,16 +30,16 @@
         {
             pictureBox1 = new PictureBox();
             btnUpLeft = new Button();
-            btnSingle = new Button();
-            btnMulti = new Button();
             btnUpMid = new Button();
             btnUpRight = new Button();
             btnMidLeft = new Button();
-            BtnLowLeft = new Button();
+            btnLowLeft = new Button();
             btnLowMid = new Button();
             btnMid = new Button();
             btnMidRight = new Button();
             bntLowRight = new Button();
+            radBtnSing = new RadioButton();
+            radBtnMulti = new RadioButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -62,24 +62,6 @@
             btnUpLeft.UseVisualStyleBackColor = true;
             btnUpLeft.Click += btnUpLeft_Click;
             // 
-            // btnSingle
-            // 
-            btnSingle.Location = new Point(263, 340);
-            btnSingle.Name = "btnSingle";
-            btnSingle.Size = new Size(75, 23);
-            btnSingle.TabIndex = 2;
-            btnSingle.Text = "Single";
-            btnSingle.UseVisualStyleBackColor = true;
-            // 
-            // btnMulti
-            // 
-            btnMulti.Location = new Point(408, 340);
-            btnMulti.Name = "btnMulti";
-            btnMulti.Size = new Size(75, 23);
-            btnMulti.TabIndex = 3;
-            btnMulti.Text = "Multi";
-            btnMulti.UseVisualStyleBackColor = true;
-            // 
             // btnUpMid
             // 
             btnUpMid.Location = new Point(335, 71);
@@ -87,6 +69,7 @@
             btnUpMid.Size = new Size(87, 74);
             btnUpMid.TabIndex = 5;
             btnUpMid.UseVisualStyleBackColor = true;
+            btnUpMid.Click += btnUpMid_Click;
             // 
             // btnUpRight
             // 
@@ -95,6 +78,7 @@
             btnUpRight.Size = new Size(87, 74);
             btnUpRight.TabIndex = 6;
             btnUpRight.UseVisualStyleBackColor = true;
+            btnUpRight.Click += btnUpRight_Click;
             // 
             // btnMidLeft
             // 
@@ -103,14 +87,16 @@
             btnMidLeft.Size = new Size(87, 76);
             btnMidLeft.TabIndex = 7;
             btnMidLeft.UseVisualStyleBackColor = true;
+            btnMidLeft.Click += btnMidLeft_Click;
             // 
-            // BtnLowLeft
+            // btnLowLeft
             // 
-            BtnLowLeft.Location = new Point(242, 231);
-            BtnLowLeft.Name = "BtnLowLeft";
-            BtnLowLeft.Size = new Size(87, 76);
-            BtnLowLeft.TabIndex = 8;
-            BtnLowLeft.UseVisualStyleBackColor = true;
+            btnLowLeft.Location = new Point(242, 231);
+            btnLowLeft.Name = "btnLowLeft";
+            btnLowLeft.Size = new Size(87, 76);
+            btnLowLeft.TabIndex = 8;
+            btnLowLeft.UseVisualStyleBackColor = true;
+            btnLowLeft.Click += btnLowLeft_Click;
             // 
             // btnLowMid
             // 
@@ -119,7 +105,7 @@
             btnLowMid.Size = new Size(87, 76);
             btnLowMid.TabIndex = 9;
             btnLowMid.UseVisualStyleBackColor = true;
-            btnLowMid.Click += button5_Click;
+            btnLowMid.Click += btnLowMid_Click;
             // 
             // btnMid
             // 
@@ -128,6 +114,7 @@
             btnMid.Size = new Size(87, 76);
             btnMid.TabIndex = 10;
             btnMid.UseVisualStyleBackColor = true;
+            btnMid.Click += btnMid_Click;
             // 
             // btnMidRight
             // 
@@ -136,6 +123,7 @@
             btnMidRight.Size = new Size(87, 76);
             btnMidRight.TabIndex = 11;
             btnMidRight.UseVisualStyleBackColor = true;
+            btnMidRight.Click += btnMidRight_Click;
             // 
             // bntLowRight
             // 
@@ -144,6 +132,31 @@
             bntLowRight.Size = new Size(87, 76);
             bntLowRight.TabIndex = 12;
             bntLowRight.UseVisualStyleBackColor = true;
+            bntLowRight.Click += bntLowRight_Click;
+            // 
+            // radBtnSing
+            // 
+            radBtnSing.AutoSize = true;
+            radBtnSing.Location = new Point(238, 344);
+            radBtnSing.Name = "radBtnSing";
+            radBtnSing.Size = new Size(91, 19);
+            radBtnSing.TabIndex = 13;
+            radBtnSing.TabStop = true;
+            radBtnSing.Text = "Single Game";
+            radBtnSing.UseVisualStyleBackColor = true;
+            radBtnSing.CheckedChanged += radBtnSing_CheckedChanged;
+            // 
+            // radBtnMulti
+            // 
+            radBtnMulti.AutoSize = true;
+            radBtnMulti.Location = new Point(428, 344);
+            radBtnMulti.Name = "radBtnMulti";
+            radBtnMulti.Size = new Size(87, 19);
+            radBtnMulti.TabIndex = 14;
+            radBtnMulti.TabStop = true;
+            radBtnMulti.Text = "Multi Game";
+            radBtnMulti.UseVisualStyleBackColor = true;
+            radBtnMulti.CheckedChanged += radBtnMulti_CheckedChanged;
             // 
             // Form1
             // 
@@ -151,37 +164,41 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
+            Controls.Add(radBtnMulti);
+            Controls.Add(radBtnSing);
             Controls.Add(bntLowRight);
             Controls.Add(btnMidRight);
             Controls.Add(btnMid);
             Controls.Add(btnLowMid);
-            Controls.Add(BtnLowLeft);
+            Controls.Add(btnLowLeft);
             Controls.Add(btnMidLeft);
             Controls.Add(btnUpRight);
             Controls.Add(btnUpMid);
-            Controls.Add(btnMulti);
-            Controls.Add(btnSingle);
             Controls.Add(btnUpLeft);
             Controls.Add(pictureBox1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private PictureBox pictureBox1;
-        private Button btnUpLeft;
+        public Button btnUpLeft;
         private Button btnSingle;
         private Button btnMulti;
         private Button btnUpMid;
         private Button btnUpRight;
         private Button btnMidLeft;
-        private Button BtnLowLeft;
+        private Button btnLowLeft;
         private Button btnLowMid;
         private Button btnMid;
         private Button btnMidRight;
         private Button bntLowRight;
+        private RadioButton radBtnSing;
+        private RadioButton radBtnMulti;
     }
 }
