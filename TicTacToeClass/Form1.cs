@@ -7,6 +7,7 @@ namespace TicTacToeClass
         TicTacToeGame player1;
         TicTacToeGame player2;
         TicTacToeGame curPlayer;
+        TicTacToeGame game = new TicTacToeGame();
         public Form1()
         {
             InitializeComponent();
@@ -16,8 +17,18 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnUpLeft, curPlayer);
+                game.placePiece(btnUpLeft, curPlayer, 0, 0);
             }
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
+
+            // game.checkWinner(game.board);
 
 
         }
@@ -26,73 +37,121 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnUpMid, curPlayer);
+                game.placePiece(btnUpMid, curPlayer, 0, 1);
             }
-                
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
         }
 
         private void btnUpRight_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnUpRight, curPlayer);
+                game.placePiece(btnUpRight, curPlayer, 0, 2);
             }
-                
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
         }
 
         private void btnMidLeft_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnMidLeft, curPlayer);
+                game.placePiece(btnMidLeft, curPlayer, 1, 0);
             }
-            
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
+
         }
 
         private void btnMid_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnMid, curPlayer);
+                game.placePiece(btnMid, curPlayer, 1, 1);
             }
-            
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
         }
 
         private void btnMidRight_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnMidRight, curPlayer);
+                game.placePiece(btnMidRight, curPlayer, 1, 2);
             }
-            
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
         }
 
         private void btnLowLeft_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnLowLeft, curPlayer);
+                game.placePiece(btnLowLeft, curPlayer, 2, 0);
             }
-            
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
         }
 
         private void btnLowMid_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(btnLowMid, curPlayer);
+                game.placePiece(btnLowMid, curPlayer, 2, 1);
             }
-            
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
         }
 
         private void bntLowRight_Click(object sender, EventArgs e)
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                TicTacToeGame.placePiece(bntLowRight, curPlayer);
+                game.placePiece(bntLowRight, curPlayer, 2, 2);
             }
-            
-
+            if (game.gameOver)
+            {
+                clearBoard();
+            }
+            else
+            {
+                game.switchPlayer(curPlayer);
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -102,7 +161,7 @@ namespace TicTacToeClass
 
         private void radBtnSing_CheckedChanged(object sender, EventArgs e)
         {
-            if (radBtnMulti.Checked== false)
+            if (radBtnMulti.Checked == false)
             {
                 player1 = new TicTacToeGame(1, "x", "real");
                 player2 = new TicTacToeGame(2, "o", "fake");
@@ -112,7 +171,7 @@ namespace TicTacToeClass
             {
                 radBtnSing.Checked = false;
             }
-            
+
         }
 
         private void radBtnMulti_CheckedChanged(object sender, EventArgs e)
@@ -127,6 +186,26 @@ namespace TicTacToeClass
             {
                 radBtnMulti.Checked = false;
             }
+        }
+
+        private void txtResult_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clearBoard()
+        {
+            if (curPlayer.Player == 1)
+            MessageBox.Show($"WInner is {curPlayer.Syms}");
+            btnUpLeft.Text = "";
+            btnUpMid.Text = "";
+            btnUpRight.Text = "";
+            btnMidLeft.Text = "";
+            btnMid.Text = "";
+            btnMidRight.Text = "";
+            btnLowLeft.Text = "";
+            btnLowMid.Text = "";
+            bntLowRight.Text = "";
         }
     }
 }

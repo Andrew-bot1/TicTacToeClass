@@ -40,6 +40,7 @@
             bntLowRight = new Button();
             radBtnSing = new RadioButton();
             radBtnMulti = new RadioButton();
+            txtResult = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -158,12 +159,21 @@
             radBtnMulti.UseVisualStyleBackColor = true;
             radBtnMulti.CheckedChanged += radBtnMulti_CheckedChanged;
             // 
+            // txtResult
+            // 
+            txtResult.Location = new Point(321, 386);
+            txtResult.Name = "txtResult";
+            txtResult.Size = new Size(113, 23);
+            txtResult.TabIndex = 15;
+            txtResult.TextChanged += txtResult_TextChanged;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlLightLight;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtResult);
             Controls.Add(radBtnMulti);
             Controls.Add(radBtnSing);
             Controls.Add(bntLowRight);
@@ -200,5 +210,6 @@
         private Button bntLowRight;
         private RadioButton radBtnSing;
         private RadioButton radBtnMulti;
+        private TextBox txtResult;
     }
 }
