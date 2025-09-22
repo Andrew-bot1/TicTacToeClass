@@ -12,7 +12,7 @@ namespace TicTacToeClass
         public string[,] board =  { { "", "", ""}, { "", "", ""}, { "", "", "" } };
         public bool gameOver = false;
         public bool draw = false;
-
+        public TicTacToeGame curPlayer;
 
         private int player;
         private string sym;
@@ -83,59 +83,109 @@ namespace TicTacToeClass
         public int comMove()
         {
             Random rand = new Random();
-            int num = 99;
+            int num = 0;
 
-            while (true)
+            if (board[1, 1] == "")
             {
-                num = rand.Next(1, 9);
-                int num2 = 99;
-                int num3 = 99;
-
-                switch (num)
+                board[1, 1] = "o";
+                return 5;
+            }
+            else if (board[0,0] ==)
+            {
+                for (int i = 0; i < board.GetLength(0); i++)
                 {
-                    case 1:
-                        num2 = 0;
-                        num3= 0;
-                        break;
-                    case 2:
-                        num2 = 0;
-                        num3 = 1;
-                        break;
-                    case 3:
-                        num2 = 0;
-                        num3 = 2;
-                        break;
-                    case 4:
-                        num2 = 1;
-                        num3 = 0;
-                        break;
-                    case 5:
-                        num2 = 1;
-                        num3 = 1;
-                        break;
-                    case 6:
-                        num2 = 1;
-                        num3 = 2;
-                        break;
-                    case 7:
-                        num2 = 2;
-                        num3 = 0;
-                        break;
-                    case 8:
-                        num2 = 2;
-                        num3 = 1;
-                        break;
-                    case 9:
-                        num2 = 2;
-                        num3 = 2;
-                        break;
-                } 
+                    for (int j = 0; j < board.GetLength(1); j++)
+                    {
+                        if (board[i, j] == curPlayer.sym)
+                        {
+                            num++;
+                            if (num == 2 )
+                            {
 
-                if (board[num2, num3] == "")
-                {
-                    break;
+                            }
+                        }
+                    }
+                }
+                    else if (board[i, 1] == board[i, 2] && board[i, 1] == "o" && board[i, 0] == "")
+                    {
+                        board[i, 0] = "o";
+                        switch (i)
+                        {
+                            case 0:
+                                return 1;
+                            case 1:
+                                return 4;
+                            case 2:
+                                return 7;
+                        }
+                    }
+                    else if (board[i, 0] == board[i, 2] && board[i, 0] == "o" && board[i, 1] == "")
+                    {
+                        board[i, 1] = "o";
+                        switch (i)
+                        {
+                            case 0:
+                                return 2;
+                            case 1:
+                                return 5;
+                            case 2:
+                                return 8;
+                        }
+                    }
                 }
             }
+
+                while (true)
+                {
+                    num = rand.Next(1, 9);
+                    int num2 = 99;
+                    int num3 = 99;
+
+                    switch (num)
+                    {
+                        case 1:
+                            num2 = 0;
+                            num3 = 0;
+                            break;
+                        case 2:
+                            num2 = 0;
+                            num3 = 1;
+                            break;
+                        case 3:
+                            num2 = 0;
+                            num3 = 2;
+                            break;
+                        case 4:
+                            num2 = 1;
+                            num3 = 0;
+                            break;
+                        case 5:
+                            num2 = 1;
+                            num3 = 1;
+                            break;
+                        case 6:
+                            num2 = 1;
+                            num3 = 2;
+                            break;
+                        case 7:
+                            num2 = 2;
+                            num3 = 0;
+                            break;
+                        case 8:
+                            num2 = 2;
+                            num3 = 1;
+                            break;
+                        case 9:
+                            num2 = 2;
+                            num3 = 2;
+                            break;
+                    }
+
+                    if (board[num2, num3] == "")
+                    {
+                        break;
+                    }
+                }
             
 
             //if (board[1,1] == "")
