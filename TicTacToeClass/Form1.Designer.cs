@@ -140,10 +140,10 @@
             radBtnSing.AutoSize = true;
             radBtnSing.Location = new Point(238, 344);
             radBtnSing.Name = "radBtnSing";
-            radBtnSing.Size = new Size(91, 19);
+            radBtnSing.Size = new Size(87, 19);
             radBtnSing.TabIndex = 13;
             radBtnSing.TabStop = true;
-            radBtnSing.Text = "Single Game";
+            radBtnSing.Text = "Multi Game";
             radBtnSing.UseVisualStyleBackColor = true;
             radBtnSing.CheckedChanged += radBtnSing_CheckedChanged;
             // 
@@ -152,10 +152,10 @@
             radBtnMulti.AutoSize = true;
             radBtnMulti.Location = new Point(428, 344);
             radBtnMulti.Name = "radBtnMulti";
-            radBtnMulti.Size = new Size(87, 19);
+            radBtnMulti.Size = new Size(91, 19);
             radBtnMulti.TabIndex = 14;
             radBtnMulti.TabStop = true;
-            radBtnMulti.Text = "Multi Game";
+            radBtnMulti.Text = "Single Game";
             radBtnMulti.UseVisualStyleBackColor = true;
             radBtnMulti.CheckedChanged += radBtnMulti_CheckedChanged;
             // 

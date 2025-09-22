@@ -9,13 +9,14 @@ namespace TicTacToeClass
 {
     internal class TicTacToeGame
     {
-        private string[,] board =  { { "", "", ""}, { "", "", ""}, { "", "", "" } };
+        public string[,] board =  { { "", "", ""}, { "", "", ""}, { "", "", "" } };
         public bool gameOver = false;
+        public bool draw = false;
 
 
         private int player;
         private string sym;
-        private string type;
+        public string type;
 
         public TicTacToeGame()
         {
@@ -82,13 +83,66 @@ namespace TicTacToeClass
         public int comMove()
         {
             Random rand = new Random();
-            int num = rand.Next(1, 9);
+            int num = 99;
 
-            if (board[1,1] == "")
+            while (true)
             {
-                
+                num = rand.Next(1, 9);
+                int num2 = 99;
+                int num3 = 99;
+
+                switch (num)
+                {
+                    case 1:
+                        num2 = 0;
+                        num3= 0;
+                        break;
+                    case 2:
+                        num2 = 0;
+                        num3 = 1;
+                        break;
+                    case 3:
+                        num2 = 0;
+                        num3 = 2;
+                        break;
+                    case 4:
+                        num2 = 1;
+                        num3 = 0;
+                        break;
+                    case 5:
+                        num2 = 1;
+                        num3 = 1;
+                        break;
+                    case 6:
+                        num2 = 1;
+                        num3 = 2;
+                        break;
+                    case 7:
+                        num2 = 2;
+                        num3 = 0;
+                        break;
+                    case 8:
+                        num2 = 2;
+                        num3 = 1;
+                        break;
+                    case 9:
+                        num2 = 2;
+                        num3 = 2;
+                        break;
+                } 
+
+                if (board[num2, num3] == "")
+                {
+                    break;
+                }
             }
-            else if
+            
+
+            //if (board[1,1] == "")
+            //{
+                
+            //}
+            //else if
 
                 return num;
 
@@ -114,9 +168,9 @@ namespace TicTacToeClass
             }
         }
 
-        public bool checkWinner(string[,] board)//, TicTacToeGame curPlayer)
+        public void checkWinner(string[,] board)//, TicTacToeGame curPlayer)
         {
-            bool winner = false;
+           // bool winner = false;
             //check horizontal row
             for (int i = 0; i < board.GetLength(0); i++)
             {
@@ -124,6 +178,7 @@ namespace TicTacToeClass
                 {
                     //winner
                     gameOver = true;
+                    break;
                 }
             }
 
@@ -134,16 +189,31 @@ namespace TicTacToeClass
                 {
                     //winner
                     gameOver = true;
+                    break;
                 }
             }
             //check diagonal row
-            if (board[0, 0] == board[1, 1] && board[1, 1] == board[2, 2] && board[0, 0] != "")
+            if (board[1, 1] != "")
             {
-                //winner
+                if (board[1, 1] == board[0, 0] && board[2, 2] == board[1, 1])
+                {
+                    //winner
+                    gameOver = true;
+                }
+                else if (board[1, 1] == board[0, 2] && board[1, 1] == board[2, 0])
+                {
+                    gameOver = true;
+                }
+            }
+                
+            //check for draw
+            if (board[0, 0] != "" && board[0, 1] != "" && board[0, 2] != "" && board[1, 0] != "" && board[1, 1] != "" && board[1, 2] != "" && board[2, 0] != "" && board[2, 1] != "" && board[2, 2] != "")
+            {
+                draw = true;
                 gameOver = true;
             }
 
-            return winner;
+            //return winner;
 
         }
 
@@ -158,6 +228,7 @@ namespace TicTacToeClass
                 {
                     //winner
                     gameOver = true;
+                    break;
                 }
             }
 
@@ -168,6 +239,7 @@ namespace TicTacToeClass
                 {
                     //winner
                     gameOver = true;
+                    break;
                 }
             }
             //check diagonal row
