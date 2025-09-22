@@ -20,10 +20,11 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnUpLeft, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
+                    
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -48,10 +49,11 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnUpMid, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
+                    
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -71,10 +73,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnUpRight, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -94,10 +96,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnMidLeft, curPlayer, 2, 2);
-                   
+                   clearBoard();
                         game.switchPlayer(curPlayer);
-                    clearBoard();
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -118,10 +120,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnMid, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -141,10 +143,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnMidRight, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -165,10 +167,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnLowLeft, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
                 }
@@ -189,10 +191,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(btnLowMid, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
 
@@ -216,10 +218,10 @@ namespace TicTacToeClass
                 if (player2.type == "fake")
                 {
                     game.placePiece(bntLowRight, curPlayer, 2, 2);
-                    
-                        game.switchPlayer(curPlayer);
                     clearBoard();
+                        game.switchPlayer(curPlayer);
                     comPiece(game.comMove());
+                    clearBoard();
                     game.switchPlayer(curPlayer);
 
 
