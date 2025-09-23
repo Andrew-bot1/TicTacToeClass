@@ -6,7 +6,7 @@ namespace TicTacToeClass
         //public int curPlayer = 1;
         TicTacToeGame player1;
         TicTacToeGame player2;
-        
+
         TicTacToeGame game = new TicTacToeGame();
         public Form1()
         {
@@ -17,25 +17,24 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnUpLeft, curPlayer, 2, 2);
-                   
-                        
-                    
-                    comPiece(game.comMove());
-                    
-                    
+                    game.placePiece(btnUpLeft, game.curPlayer, 2, 2);
+                    comPiece();
+                }
+                else if (game.curPlayer.type == "real")
+                {
+                    game.placePiece(btnUpLeft, game.curPlayer, 0, 0);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
+                    //clearBoard();
 
                 }
-                else if (player2.type == "real")
-                {
-                        game.placePiece(btnUpLeft, curPlayer, 0, 0);
-                    clearBoard();
-                    
-                }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                // game.switchPlayer(game.curPlayer);
 
             }
 
@@ -48,18 +47,23 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnUpMid, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnUpMid, game.curPlayer, 2, 2);
+                    comPiece();
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnUpMid, curPlayer, 0, 1);
+                    game.placePiece(btnUpMid, game.curPlayer, 0, 1);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                // game.switchPlayer(game.curPlayer);
             }
         }
 
@@ -67,19 +71,24 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnUpRight, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnUpRight, game.curPlayer, 2, 2);
+                    comPiece();
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnUpRight, curPlayer, 0, 2);
-                    game.switchPlayer(curPlayer);
+                    game.placePiece(btnUpRight, game.curPlayer, 0, 2);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
+                    //   game.switchPlayer(game.curPlayer);
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                // game.switchPlayer(game.curPlayer);
             }
         }
 
@@ -87,18 +96,23 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnMidLeft, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnMidLeft, game.curPlayer, 2, 2);
+                    comPiece();
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnMidLeft, curPlayer, 1, 0);
+                    game.placePiece(btnMidLeft, game.curPlayer, 1, 0);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                // game.switchPlayer(game.curPlayer);
             }
 
         }
@@ -107,18 +121,23 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnMid, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnMid, game.curPlayer, 2, 2);
+                    comPiece();
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnMid, curPlayer, 1, 1);
+                    game.placePiece(btnMid, game.curPlayer, 1, 1);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                //game.switchPlayer(game.curPlayer);
             }
         }
 
@@ -126,18 +145,23 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnMidRight, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnMidRight, game.curPlayer, 2, 2);
+                    comPiece();
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnMidRight, curPlayer, 1, 2);
+                    game.placePiece(btnMidRight, game.curPlayer, 1, 2);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                //game.switchPlayer(game.curPlayer);
             }
 
         }
@@ -146,18 +170,23 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnLowLeft, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnLowLeft, game.curPlayer, 2, 2);
+                    comPiece();
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnLowLeft, curPlayer, 2, 0);
+                    game.placePiece(btnLowLeft, game.curPlayer, 2, 0);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                // game.switchPlayer(game.curPlayer);
 
             }
         }
@@ -166,21 +195,24 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(btnLowMid, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(btnLowMid, game.curPlayer, 2, 2);
+                    comPiece();
 
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(btnLowMid, curPlayer, 2, 1);
-                    
-
+                    game.placePiece(btnLowMid, game.curPlayer, 2, 1);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                game.switchPlayer(curPlayer);
+                // game.switchPlayer(game.curPlayer);
 
             }
         }
@@ -189,19 +221,24 @@ namespace TicTacToeClass
         {
             if (radBtnSing.Checked == true || radBtnMulti.Checked == true)
             {
-                if (player2.type == "fake")
+                if (game.curPlayer.type == "fake")
                 {
-                    game.placePiece(bntLowRight, curPlayer, 2, 2);
-                    comPiece(game.comMove());
+                    game.placePiece(bntLowRight, game.curPlayer, 2, 2);
+                    comPiece();
 
 
                 }
-                else if (player2.type == "real")
+                else if (game.curPlayer.type == "real")
                 {
-                        game.placePiece(bntLowRight, curPlayer, 2, 2);  
+                    game.placePiece(bntLowRight, game.curPlayer, 2, 2);
+                    if (player2.type == "fake")
+                    {
+                        game.switchPlayer(game.curPlayer);
+                        comPiece();
+                    }
                 }
                 clearBoard();
-                    game.switchPlayer(curPlayer);
+                //game.switchPlayer(game.curPlayer);
 
             }
         }
@@ -217,7 +254,7 @@ namespace TicTacToeClass
             {
                 player1 = new TicTacToeGame(1, "x", "real");
                 player2 = new TicTacToeGame(2, "o", "real");
-                curPlayer = player1;
+                game.curPlayer = player1;
             }
             else
             {
@@ -232,7 +269,7 @@ namespace TicTacToeClass
             {
                 player1 = new TicTacToeGame(1, "x", "real");
                 player2 = new TicTacToeGame(2, "o", "fake");
-                curPlayer = player1;
+                game.curPlayer = player1;
             }
             else
             {
@@ -246,53 +283,134 @@ namespace TicTacToeClass
         }
 
         //place com piece
-        private void comPiece(int num)
+        private void comPiece()
         {
-            switch (num)
+            //{
+            //                   case 1:
+            //        game.placePiece(bntLowRight, game.curPlayer, 0, 0);
+            //        game.board[0, 0] = "o";
+            //        break;
+            //    case 2:
+            //        game.placePiece(btnUpMid, game.curPlayer, 0, 1);
+            //        game.board[0, 1] = "o";
+            //        break;
+            //    case 3:
+            //        game.placePiece(btnUpRight, game.curPlayer, 0, 2);
+            //        game.board[0, 2] = "o";
+            //        break;
+            //    case 4:
+            //        game.placePiece(btnMidLeft, game.curPlayer, 1, 0);
+            //        game.board[1, 0] = "o";
+            //        break;
+            //    case 5:
+            //        game.placePiece(btnMid, game.curPlayer, 1, 1);
+            //        game.board[1, 1] = "o";
+            //        break;
+            //    case 6:
+            //        game.placePiece(btnMidRight, game.curPlayer, 1, 2);
+            //        game.board[1, 2] = "o";
+            //        break;
+            //    case 7:
+            //        game.placePiece(btnLowLeft, game.curPlayer, 2, 0);
+            //        game.board[2, 0] = "o";
+            //        break;
+            //    case 8:
+            //        game.placePiece(btnLowMid, game.curPlayer, 2, 1);
+            //        game.board[2, 1] = "o";
+            //        break;
+            //    case 9:
+            //        game.placePiece(bntLowRight, game.curPlayer, 2, 2);
+            //        game.board[2, 2] = "o";
+            Random rand = new Random();
+            int num = 0;
+            Button square = btnUpLeft;
+            //        break;
+            int num2 = 99;
+            int num3 = 99;
+            //Button square;
+
+            while (true)
             {
-                               case 1:
-                    game.placePiece(bntLowRight, curPlayer, 0, 0);
+
+                num = rand.Next(1, 10);
+                switch (num)
+                {
+
+
+                    case 1:
+                        num2 = 0;
+                        num3 = 0;
+                        square = btnUpLeft;
+                        //btnUpLeft.Text = "O";
+                        break;
+                    case 2:
+                        num2 = 0;
+                        num3 = 1;
+                        square = btnUpMid;
+                        //btnUpMid.Text = "O";
+                        break;
+                    case 3:
+                        num2 = 0;
+                        num3 = 2;
+                        square = btnUpRight;
+                        //btnUpRight.Text = "O";
+                        break;
+                    case 4:
+                        num2 = 1;
+                        num3 = 0;
+                        square = btnMidLeft;
+                        //btnMidLeft.Text = "O";
+                        break;
+                    case 5:
+                        num2 = 1;
+                        num3 = 1;
+                        square = btnMid;
+                        //btnMid.Text = "O";
+                        break;
+                    case 6:
+                        num2 = 1;
+                        num3 = 2;
+                        square = btnMidRight;
+                        //btnMidRight.Text = "O";
+                        break;
+                    case 7:
+                        num2 = 2;
+                        num3 = 0;
+                        square = btnLowLeft;
+                        //btnLowLeft.Text = "O";
+                        break;
+                    case 8:
+                        num2 = 2;
+                        num3 = 1;
+                        square = btnLowMid;
+                        //btnLowMid.Text = "O";
+                        break;
+                    case 9:
+                        num2 = 2;
+                        num3 = 2;
+                        square = bntLowRight;
+                        //bntLowRight.Text = "O";
+                        break;
+                }
+                if (game.board[num2, num3] == "")
+                {
+                    //game.board[num2, num3] = "O";
+                    game.placePiece(square, game.curPlayer, num2, num3);
                     break;
-                case 2:
-                    game.placePiece(btnUpMid, curPlayer, 0, 1);
-                    break;
-                case 3:
-                    game.placePiece(btnUpRight, curPlayer, 0, 2);
-                    break;
-                case 4:
-                    game.placePiece(btnMidLeft, curPlayer, 1, 0);
-                    break;
-                case 5:
-                    game.placePiece(btnMid, curPlayer, 1, 1);
-                    break;
-                case 6:
-                    game.placePiece(btnMidRight, curPlayer, 1, 2);
-                    break;
-                case 7:
-                    game.placePiece(btnLowLeft, curPlayer, 2, 0);
-                    break;
-                case 8:
-                    game.placePiece(btnLowMid, curPlayer, 2, 1);
-                    break;
-                case 9:
-                    game.placePiece(bntLowRight, curPlayer, 2, 2);
-                    break;
+                }
             }
+            //game.checkWinner();
+            //game.switchPlayer(game.curPlayer);
         }
+
+
 
         private void clearBoard()
         {
-            if (game.gameOver==true)
-            {
-                if (game.draw == true)
-                {
-                    MessageBox.Show("It's a draw!");
-                }
-                else
-                {
-                    MessageBox.Show($"WInner is {curPlayer.Sym}");
-                }
 
+            if (game.gameOver == true)
+            {
+                MessageBox.Show($"WInner is {game.curPlayer.Sym}");
                 game.gameOver = false;
 
                 for (int i = 0; i < game.board.GetLength(0); i++)
@@ -313,7 +431,34 @@ namespace TicTacToeClass
                 btnLowMid.Text = "";
                 bntLowRight.Text = "";
             }
+            else if (game.draw == true)
+            {
+                MessageBox.Show("It's a draw!");
+                game.gameOver = false;
+
+                for (int i = 0; i < game.board.GetLength(0); i++)
+                {
+                    for (int j = 0; j < game.board.GetLength(1); j++)
+                    {
+                        Console.WriteLine(game.board[i, j] = "");
+                    }
+                }
+
+                btnUpLeft.Text = "";
+                btnUpMid.Text = "";
+                btnUpRight.Text = "";
+                btnMidLeft.Text = "";
+                btnMid.Text = "";
+                btnMidRight.Text = "";
+                btnLowLeft.Text = "";
+                btnLowMid.Text = "";
+                bntLowRight.Text = "";
+            }
+
+                
             
+            game.switchPlayer(game.curPlayer);
+
         }
     }
 }
