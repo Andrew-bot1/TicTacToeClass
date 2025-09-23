@@ -271,10 +271,13 @@ namespace TicTacToeClass
             if (curPlayer.Player == 1)
             {
                 curPlayer.Player = 2;
+                curPlayer.Sym = "o";
             }
             else
             {
                 curPlayer.Player = 1;
+                curPlayer.sym = "x";
+
             }
         }
 
